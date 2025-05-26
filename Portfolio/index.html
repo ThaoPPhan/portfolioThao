@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Computer Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'jet-stream': '#BDD9BF',
+                        'charcoal': '#2E4052',
+                        'mustard': '#FFC857',
+                        'white': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #BDD9BF 0%, #FFFFFF 100%);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFC857;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .language-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        
+        .english { background-color: #3B82F6; }
+        .french { background-color: #EF4444; }
+        .vietnamese { background-color: #10B981; }
+    </style>
+</head>
+<body class="bg-white text-charcoal">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-mustard">Portfolio</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-charcoal hover:text-mustard">About</a>
+                    <a href="#process" class="nav-link text-charcoal hover:text-mustard">Process</a>
+                    <a href="#projects" class="nav-link text-charcoal hover:text-mustard">Projects</a>
+                    <a href="#contact" class="nav-link text-charcoal hover:text-mustard">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <a href="#about" class="block px-4 py-2 text-sm hover:bg-jet-stream">About</a>
+            <a href="#process" class="block px-4 py-2 text-sm hover:bg-jet-stream">Process</a>
+            <a href="#projects" class="block px-4 py-2 text-sm hover:bg-jet-stream">Projects</a>
+            <a href="#contact" class="block px-4 py-2 text-sm hover:bg-jet-stream">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-charcoal">Hello, I'm <span class="text-mustard">[Your Name]</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-charcoal">Computer Engineer & UI Design Learner</h2>
+                    <p class="text-lg mb-8 text-charcoal">Creating digital solutions with a focus on user experience and clean design.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-mustard hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300">View Projects</a>
+                        <a href="#contact" class="border-2 border-charcoal hover:bg-jet-stream text-charcoal px-6 py-3 rounded-lg font-medium transition duration-300">Contact Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-mustard rounded-full flex items-center justify-center">
+                            <div class="w-60 h-60 md:w-72 md:h-72 bg-jet-stream rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-6xl md:text-8xl text-charcoal"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-charcoal">About Me</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-64 h-64 bg-jet-stream rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-user-tie text-5xl text-charcoal"></i>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-semibold mb-4 text-mustard">Computer Engineer & UI Enthusiast</h3>
+                    <p class="mb-6 text-lg text-charcoal">
+                        I'm a passionate computer engineer with experience in mobile application design and development. 
+                        Currently expanding my skills in UI/UX design to create more intuitive and visually appealing digital experiences.
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-xl font-medium mb-3 text-charcoal">Summary of Qualifications</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-mustard mt-1 mr-2"></i>
+                                <span>Experienced in Mobile Application design and development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-mustard mt-1 mr-2"></i>
+                                <span>Strong communication, teamwork, research, and analytical skills through two years of tutoring and collaborative academic projects</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-medium mb-3 text-charcoal">Languages</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <span class="language-dot english"></span>
+                                <span>English (Fluent)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="language-dot french"></span>
+                                <span>French (Fluent)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="language-dot vietnamese"></span>
+                                <span>Vietnamese (Fluent)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Work Section -->
+    <section id="process" class="py-16 bg-jet-stream">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-charcoal">How I Work</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Research -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-mustard rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-search text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-charcoal">Research</h3>
+                    <p class="text-charcoal mb-4">
+                        I begin by understanding user needs through research methods like surveys, interviews, and competitive analysis.
+                    </p>
+                    <a href="https://www.nngroup.com/" target="_blank" class="text-mustard hover:underline flex items-center justify-center">
+                        NN/g Resources <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Design -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-mustard rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-pencil-ruler text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-charcoal">Design</h3>
+                    <p class="text-charcoal mb-4">
+                        Creating wireframes and prototypes to visualize solutions, focusing on usability and aesthetic appeal.
+                    </p>
+                    <a href="https://www.nngroup.com/articles/design-process/" target="_blank" class="text-mustard hover:underline flex items-center justify-center">
+                        Design Process <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Development -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-mustard rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-code text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-charcoal">Development</h3>
+                    <p class="text-charcoal mb-4">
+                        Implementing the solution with clean, efficient code while maintaining design integrity.
+                    </p>
+                    <a href="https://www.nngroup.com/articles/agile-ux/" target="_blank" class="text-mustard hover:underline flex items-center justify-center">
+                        Agile UX <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-4 text-center text-charcoal">My Learning Progress</h3>
+                <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                    <div class="bg-mustard h-4 rounded-full" style="width: 75%"></div>
+                </div>
+                <p class="text-center text-charcoal">
+                    Currently 75% through my UI/UX Design learning journey, focusing on accessibility and responsive design principles.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-charcoal">Case Studies</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service Site -->
+                <a href="project-service.html" class="project-card">
+                    <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
+                        <div class="h-48 bg-mustard flex items-center justify-center">
+                            <i class="fas fa-concierge-bell text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-charcoal">Service Site</h3>
+                            <p class="text-charcoal mb-4">A responsive website for service booking with intuitive user flows.</p>
+                            <span class="inline-block bg-mustard text-white px-3 py-1 rounded-full text-sm">UI Design</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Small Game -->
+                <a href="project-game.html" class="project-card">
+                    <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
+                        <div class="h-48 bg-mustard flex items-center justify-center">
+                            <i class="fas fa-gamepad text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-charcoal">Small Game</h3>
+                            <p class="text-charcoal mb-4">An interactive browser game with engaging mechanics and clean UI.</p>
+                            <span class="inline-block bg-mustard text-white px-3 py-1 rounded-full text-sm">Game Design</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- E-commerce Site -->
+                <a href="project-ecommerce.html" class="project-card">
+                    <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
+                        <div class="h-48 bg-mustard flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-charcoal">E-commerce Site</h3>
+                            <p class="text-charcoal mb-4">Online store with seamless checkout process and product discovery.</p>
+                            <span class="inline-block bg-mustard text-white px-3 py-1 rounded-full text-sm">E-commerce</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Analytics Site -->
+                <a href="project-analytics.html" class="project-card">
+                    <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
+                        <div class="h-48 bg-mustard flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-charcoal">Analytics Dashboard</h3>
+                            <p class="text-charcoal mb-4">Data visualization platform with customizable reports and insights.</p>
+                            <span class="inline-block bg-mustard text-white px-3 py-1 rounded-full text-sm">Data Viz</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-charcoal text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4 text-mustard">Contact Information</h3>
+                    <p class="mb-6">Feel free to reach out for collaborations or just to say hello!</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-mustard mt-1 mr-4"></i>
+                            <span>your.email@example.com</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-mustard mt-1 mr-4"></i>
+                            <span>+1 (123) 456-7890</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-mustard mt-1 mr-4"></i>
+                            <span>City, Country</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium mb-4 text-mustard">Connect With Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-mustard">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-mustard">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-mustard"></textarea>
+                        </div>
+                        <button type="submit" class="bg-mustard hover:bg-opacity-90 text-charcoal px-6 py-3 rounded-lg font-medium transition duration-300 w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-jet-stream py-8 text-charcoal">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2023 Your Name. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-mustard transition duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-mustard transition duration-300">Terms of Service</a>
+                    <a href="#" class="hover:text-mustard transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Pages -->
+    <div id="project-pages" style="display: none;">
+        <div id="project-service" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+            <div class="text-center p-8">
+                <h2 class="text-4xl font-bold mb-4 text-charcoal">Service Site Project</h2>
+                <p class="text-xl text-charcoal mb-8">In progress</p>
+                <a href="#" class="bg-mustard text-white px-6 py-3 rounded-lg font-medium" onclick="closeProject()">Back to Portfolio</a>
+            </div>
+        </div>
+        
+        <div id="project-game" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+            <div class="text-center p-8">
+                <h2 class="text-4xl font-bold mb-4 text-charcoal">Small Game Project</h2>
+                <p class="text-xl text-charcoal mb-8">In progress</p>
+                <a href="#" class="bg-mustard text-white px-6 py-3 rounded-lg font-medium" onclick="closeProject()">Back to Portfolio</a>
+            </div>
+        </div>
+        
+        <div id="project-ecommerce" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+            <div class="text-center p-8">
+                <h2 class="text-4xl font-bold mb-4 text-charcoal">E-commerce Site Project</h2>
+                <p class="text-xl text-charcoal mb-8">In progress</p>
+                <a href="#" class="bg-mustard text-white px-6 py-3 rounded-lg font-medium" onclick="closeProject()">Back to Portfolio</a>
+            </div>
+        </div>
+        
+        <div id="project-analytics" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+            <div class="text-center p-8">
+                <h2 class="text-4xl font-bold mb-4 text-charcoal">Analytics Dashboard Project</h2>
+                <p class="text-xl text-charcoal mb-8">In progress</p>
+                <a href="#" class="bg-mustard text-white px-6 py-3 rounded-lg font-medium" onclick="closeProject()">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Project page handling
+        function closeProject() {
+            document.querySelectorAll('#project-pages > div').forEach(page => {
+                page.style.display = 'none';
+            });
+            history.pushState(null, null, ' ');
+        }
+        
+        // Handle project links
+        document.querySelectorAll('.project-card').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                const projectId = href.replace('project-', '').replace('.html', '');
+                const projectPage = document.getElementById(`project-${projectId}`);
+                
+                if (projectPage) {
+                    projectPage.style.display = 'flex';
+                    history.pushState(null, null, href);
+                }
+            });
+        });
+        
+        // Handle back button
+        window.addEventListener('popstate', function() {
+            document.querySelectorAll('#project-pages > div').forEach(page => {
+                page.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
