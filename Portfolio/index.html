@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Computer Engineer</title>
+    <title>Thao Phan | Computer Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -111,9 +111,9 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-charcoal">Hello, I'm <span class="text-mustard">[Your Name]</span></h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-charcoal">Hello, I'm <span class="text-mustard">Phuong Thao Phan</span></h1>
                     <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-charcoal">Computer Engineer & UI Design Learner</h2>
-                    <p class="text-lg mb-8 text-charcoal">Creating digital solutions with a focus on user experience and clean design.</p>
+                    <p class="text-lg mb-8 text-charcoal">Building Tomorrow’s Tech with Precision, Passion, and Purpose.</p>
                     <div class="flex space-x-4">
                         <a href="#projects" class="bg-mustard hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300">View Projects</a>
                         <a href="#contact" class="border-2 border-charcoal hover:bg-jet-stream text-charcoal px-6 py-3 rounded-lg font-medium transition duration-300">Contact Me</a>
@@ -255,7 +255,7 @@
             
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Service Site -->
-                <a href="project-service.html" class="project-card">
+                <a href="blankpage.html" class="project-card">
                     <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
                         <div class="h-48 bg-mustard flex items-center justify-center">
                             <i class="fas fa-concierge-bell text-6xl text-white"></i>
@@ -269,7 +269,7 @@
                 </a>
                 
                 <!-- Small Game -->
-                <a href="project-game.html" class="project-card">
+                <a href="blankpage.html" class="project-card">
                     <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
                         <div class="h-48 bg-mustard flex items-center justify-center">
                             <i class="fas fa-gamepad text-6xl text-white"></i>
@@ -283,7 +283,7 @@
                 </a>
                 
                 <!-- E-commerce Site -->
-                <a href="project-ecommerce.html" class="project-card">
+                <a href="blankpage.html" class="project-card">
                     <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
                         <div class="h-48 bg-mustard flex items-center justify-center">
                             <i class="fas fa-shopping-cart text-6xl text-white"></i>
@@ -297,7 +297,7 @@
                 </a>
                 
                 <!-- Analytics Site -->
-                <a href="project-analytics.html" class="project-card">
+                <a href="blankpage.html" class="project-card">
                     <div class="bg-jet-stream rounded-lg overflow-hidden shadow-md h-full">
                         <div class="h-48 bg-mustard flex items-center justify-center">
                             <i class="fas fa-chart-line text-6xl text-white"></i>
@@ -326,25 +326,25 @@
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <i class="fas fa-envelope text-mustard mt-1 mr-4"></i>
-                            <span>your.email@example.com</span>
+                            <span>pphan063@uottawa.ca</span>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-phone-alt text-mustard mt-1 mr-4"></i>
-                            <span>+1 (123) 456-7890</span>
+                            <span>+1 (613) 301-4847</span>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-map-marker-alt text-mustard mt-1 mr-4"></i>
-                            <span>City, Country</span>
+                            <span>Ottawa, Canada</span>
                         </div>
                     </div>
                     
                     <div class="mt-8">
                         <h4 class="text-lg font-medium mb-4 text-mustard">Connect With Me</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
+                            <a href="https://www.linkedin.com/in/thaophan378/" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
+                            <a href="https://github.com/ThaoPPhan" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
                                 <i class="fab fa-github"></i>
                             </a>
                             <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-charcoal hover:bg-mustard transition duration-300">
@@ -474,12 +474,13 @@
         // Handle project links
         document.querySelectorAll('.project-card').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
+                
                 const href = this.getAttribute('href');
                 const projectId = href.replace('project-', '').replace('.html', '');
                 const projectPage = document.getElementById(`project-${projectId}`);
                 
                 if (projectPage) {
+                    e.preventDefault();
                     projectPage.style.display = 'flex';
                     history.pushState(null, null, href);
                 }
